@@ -1,2 +1,0 @@
-# rhcsa
-rhcsa exam prep
