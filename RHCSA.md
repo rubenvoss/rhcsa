@@ -94,3 +94,7 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 7. touch /.autorelabel 
 
 ## Add repos
+
+## Boot into xyz target by default
+1. systemctl get-default
+2. systemctl set-default xyz
