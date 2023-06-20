@@ -85,13 +85,13 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 
 ## Change root pw on reboot:
 
-1. Interrupt reboot with e 
-2. Add rd.break to end of line that starts with linux 
-3. Ctrl+x to start with new parameters 
-4. mount –o remount,rw /sysroot 
-5. chroot /sysroot 
-6. passwd root 
-7. touch /.autorelabel 
+1. Interrupt reboot with e
+2. Add rd.break to end of line that starts with linux
+3. Ctrl+x to start with new parameters
+4. mount –o remount,rw /sysroot
+5. chroot /sysroot
+6. passwd root
+7. touch /.autorelabel
 
 ## Add repos
 1. dnf config-manager --add-repo http://repo.com/repo
@@ -99,3 +99,14 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 ## Boot into xyz target by default
 1. systemctl get-default
 2. systemctl set-default xyz
+
+## User Input redirection
+1. > redirect into file, overwrite file
+2. >> redirect into file, append file
+3. | redirect to other process
+4. 2> / 2>> redirect only errors into file
+
+## chown, chmod, umask
+1. chown userxyz file1 - change file ownership
+2. chmod 777 file1 - change rwx permissions r=4, w=2, x=1
+3. umask
