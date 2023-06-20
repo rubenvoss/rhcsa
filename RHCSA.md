@@ -5,11 +5,11 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 - Access a shell prompt and issue commands with correct syntax
 - Use input-output redirection (>, >>, |, 2>, etc.)
 - Use grep and regular expressions to analyze text
-- Access remote systems using SSH
+<!-- - Access remote systems using SSH -->
 - Log in and switch users in multiuser targets
 - Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
-- Create and edit text files
-- Create, delete, copy, and move files and directories
+<!-- - Create and edit text files -->
+<!-- - Create, delete, copy, and move files and directories -->
 - Create hard and soft links
 - List, set, and change standard ugo/rwx permissions
 - Locate, read, and use system documentation including man, info, and files in /usr/share/doc
@@ -94,6 +94,7 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 7. touch /.autorelabel 
 
 ## Add repos
+1. dnf config-manager --add-repo http://repo.com/repo
 
 ## Boot into xyz target by default
 1. systemctl get-default
