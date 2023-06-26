@@ -39,3 +39,8 @@
 
 ## tuned
 1. yum install tuned
+2. tuned-adm active -> show active tuned profile
+3. tuned-adm list -> list available profiles
+4. tuned-adm recommend -> recommend a profile
+5. tuned-adm profile <PROFILE> -> set a specific profile
+6. tuned-adm off -> turn off tuned-adm
