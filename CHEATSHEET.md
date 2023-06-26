@@ -36,3 +36,6 @@
 2. tar -xf etcb.tar -> extract from file etcb.tar (xf = extract from file)
 3. tar -czf etcb.tar.gz etc/ -> make tar and gzip tar
 4. gzip archive.tar -> archive.tar.gz
+
+## tuned
+1. yum install tuned
