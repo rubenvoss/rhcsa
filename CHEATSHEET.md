@@ -10,8 +10,10 @@
 6. passwd root
 7. touch /.autorelabel
 
-## Add repos
-1. dnf config-manager --add-repo http://repo.com/repo
+## yum 
+1. yum config-manager --add-repo http://repo.com/repo -> add repo
+2. /etc/yum.repos.d -> repo configuration files
+3. /etc/yum.conf -> yum conf file
 
 ## Boot into xyz target by default
 1. systemctl get-default
