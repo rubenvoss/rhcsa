@@ -44,3 +44,8 @@
 4. tuned-adm recommend -> recommend a profile
 5. tuned-adm profile <PROFILE> -> set a specific profile
 6. tuned-adm off -> turn off tuned-adm
+
+## NTP
+configure the NTP server to run at xyz.com
+-> NTP will use chrony & chronyd
+1. yum install chrony
