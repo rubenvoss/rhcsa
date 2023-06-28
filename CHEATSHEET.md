@@ -1,7 +1,27 @@
 # RHCSA cheatsheet
 
-## Change root pw on reboot:
+## Users and Groups
+1. groupadd newgroup -> create new group
+2. useradd newuser -> create new user
+3. useradd newuser -G newgroup -> specify secondary group
+4. useradd newuser -s /sbin/nologin -> create user without login shell
+5. passwd newuser
 
+## chown, chmod, umask
+1. chown userxyz:groupxyz file1 - change file ownership
+1.5 chown -R -> change recursively
+2. chmod 777 file1 - change rwx permissions r=4, w=2, x=1
+3. umask -> standard chmod of a user umask 0111 = 0777 - 0111 -> 0666, no execute rights
+4. umask 0000 -> -rw-rw-rw-
+
+## ACL File permissions
+1. getfacl file -> get ACL permissions
+2. setfacl -m u:user1:rw- file1 -> set filepermissions
+
+## setgid 
+1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
+
+## Change root pw on reboot:
 1. Interrupt reboot with e
 2. Add rd.break to end of line that starts with linux
 3. Ctrl+x to start with new parameters
@@ -25,12 +45,6 @@
 3. | redirect to other processes
 4. 2> / 2>> redirect only errors into file
 
-## chown, chmod, umask
-1. chown userxyz:groupxyz file1 - change file ownership
-2. chmod 777 file1 - change rwx permissions r=4, w=2, x=1
-3. umask -> standard chmod of a user umask 0111 = 0777 - 0111 -> 0666, no execute rights
-4. umask 0000 -> -rw-rw-rw-
-
 ## tar & gzip
 1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)
 2. tar -xf etcb.tar -> extract from file etcb.tar (xf = extract from file)
@@ -49,3 +63,10 @@
 configure the NTP server to run at xyz.com
 -> NTP will use chrony & chronyd
 1. yum install chrony
+2. vi /etc/chrony.conf
+#pool...
+server <GIVEN_IP> iburst
+3. systemctl restart chronyd
+3.5 systemctl enable chronyd
+4. chronyc sources -v
+5. timedatectl set-ntp true
