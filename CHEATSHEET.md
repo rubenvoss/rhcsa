@@ -18,7 +18,7 @@
 1. getfacl file -> get ACL permissions
 2. setfacl -m u:user1:rw- file1 -> set filepermissions
 
-## setgid 
+## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
 
 ## Change root pw on reboot:
@@ -30,7 +30,7 @@
 6. passwd root
 7. touch /.autorelabel
 
-## yum 
+## yum
 1. yum config-manager --add-repo http://repo.com/repo -> add repo
 2. /etc/yum.repos.d -> repo configuration files
 3. /etc/yum.conf -> yum conf file
@@ -70,3 +70,12 @@ server <GIVEN_IP> iburst
 3.5 systemctl enable chronyd
 4. chronyc sources -v
 5. timedatectl set-ntp true
+
+## List, create, and delete partitions on GPT disks
+1. lsblk -> overview over storage devices
+2. df -h -> overview over mounted partitions
+3. fdisk -l -> overview over storage devices
+4. fdisb /dev/vdb -> create new partition
+
+## Create, mount, unmount, and use vfat, ext4, and xfs file systems
+1. mkfs.xfs /dev/vdb1 -> make partition vdb1 into an xfs file system
