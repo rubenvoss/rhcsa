@@ -53,11 +53,18 @@
 
 ## tuned
 1. yum install tuned
-2. tuned-adm active -> show active tuned profile
-3. tuned-adm list -> list available profiles
-4. tuned-adm recommend -> recommend a profile
-5. tuned-adm profile <PROFILE> -> set a specific profile
-6. tuned-adm off -> turn off tuned-adm
+2. systemctl enable tuned
+3. tuned-adm active -> show active tuned profile
+4. tuned-adm list -> list available profiles
+5. tuned-adm recommend -> recommend a profile
+6. tuned-adm profile <PROFILE> -> set a specific profile
+7. tuned-adm off -> turn off tuned-adm
+
+## nice
+1. system process priority
+2. -20 high -> 19 low
+3. nice -n # process -> set process priority
+4. renice -n # PID -> adjust process priority
 
 ## NTP
 configure the NTP server to run at xyz.com
@@ -72,10 +79,21 @@ server <GIVEN_IP> iburst
 5. timedatectl set-ntp true
 
 ## List, create, and delete partitions on GPT disks
-1. lsblk -> overview over storage devices
-2. df -h -> overview over mounted partitions
-3. fdisk -l -> overview over storage devices
+1. fdisk -l -> overview over hard drives
+2. lsblk -> overview over block storage devices
+3. df -h -> overview over mounted partitions
 4. fdisb /dev/vdb -> create new partition
 
 ## Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vdb1 -> make partition vdb1 into an xfs file system
+2. vi /etc/fstab -> automount partitions on boot
+3. /dev/vdb2  /data defaults  0 0
+4. volume location    mount folder location   defaults    0   0
+## Extend existing logical volumes
+
+pvdisplay
+pvcreate
+vgdisplay
+
+vgextend
+lvextend
