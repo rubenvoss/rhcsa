@@ -18,6 +18,24 @@
 1. getfacl file -> get ACL permissions
 2. setfacl -m u:user1:rw- file1 -> set filepermissions
 
+# SELinux
+## Set enforcing and permissive modes for SELinux
+1. vi /etc/selinux/config
+2. SELINUX=disabled / permissive / enforcing
+3. reboot
+4. sestatus
+
+## List and identify SELinux file and process context
+1. ls -lZ -> file context
+2. ls -dZ -> directory context
+3. ps -auxZ -> process context
+
+## Restore default file contexts
+1. restorecon file1
+2. restorecon -R /directory/
+
+## Manage SELinux port labels
+1.
 ## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
 
