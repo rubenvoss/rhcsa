@@ -35,7 +35,9 @@
 2. restorecon -R /directory/
 
 ## Manage SELinux port labels
-1.
+TODO
+
+##
 ## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
 
