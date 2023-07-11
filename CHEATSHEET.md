@@ -1,5 +1,11 @@
 # RHCSA cheatsheet
 
+## Use grep and regular expressions to analyze text
+1. grep 'xyz' file1 -> search for xyz in file1
+2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
+3. grep '^Jul 15' Linux_2k.log -> search for all lines starting with Jul 15
+4. grep '[^d]og' file1 -> search for all lines containing og but not dog
+
 ## Users and Groups
 1. groupadd newgroup -> create new group
 2. useradd newuser -> create new user
@@ -59,11 +65,11 @@ TODO
 1. systemctl get-default
 2. systemctl set-default xyz
 
-## User Input redirection
+## Use input-output redirection (>, >>, |, 2>, etc.)
 1. > redirect into file, overwrite file
 2. >> redirect into file, append file
 3. | redirect to other processes
-4. 2> / 2>> redirect only errors into file
+4. 2> / 2>> redirects only errors into file
 
 ## tar & gzip
 1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)
