@@ -2,7 +2,7 @@ EX200V9K
 ● Understand and use essential tools
     <!-- ○ Access a shell prompt and issue commands with correct syntax -->
     <!-- ○ Use input-output redirection (>, >>, |, 2>, etc.) -->
-    ○ Use grep and regular expressions to analyze text
+    <!-- ○ Use grep and regular expressions to analyze text -->
     <!-- ○ Access remote systems using SSH -->
     ○ Log in and switch users in multi-user targets
     ○ Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2

@@ -5,6 +5,8 @@
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
 3. grep '^Jul 15' Linux_2k.log -> search for all lines starting with Jul 15
 4. grep '[^d]og' file1 -> search for all lines containing og but not dog
+5. grep 'st..id' -> search for all lines containing st followed by any two characters followed by id (e.g. stupid, sts3id, st!did)
+6. grep 'r*' -> search for all lines containing r followed by any number of characters
 
 ## Users and Groups
 1. groupadd newgroup -> create new group
