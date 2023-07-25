@@ -7,6 +7,9 @@
 4. grep '[^d]og' file1 -> search for all lines containing og but not dog
 5. grep 'st..id' -> search for all lines containing st followed by any two characters followed by id (e.g. stupid, sts3id, st!did)
 6. grep 'r*' -> search for all lines containing r followed by any number of characters
+7. grep 'r?uben' -> search for all lines containing r followed by any one character followed by uben (e.g. ruben, r3uben, r!uben)
+8. grep -v -> return inverse results
+9. ls -l | grep '.md$' -> return all files ending with .md
 
 ## Users and Groups
 1. groupadd newgroup -> create new group
@@ -43,9 +46,14 @@
 2. restorecon -R /directory/
 
 ## Manage SELinux port labels
-TODO
+1. semanage port -l -> list all ports
+2. semanage port -a -t http_port_t -p tcp 82 -> system can connect to httpd on port 82
 
-##
+## Use boolean settings to modify system SELinux settings
+1. semanage boolean -l -> list all booleans
+2. getsebool -a -> list all booleans
+3. setsebool -P <BOOLEAN> on -> set boolean permanently
+
 ## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
 
