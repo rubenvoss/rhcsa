@@ -30,6 +30,7 @@
 2. setfacl -m u:user1:rw- file1 -> set filepermissions
 
 # SELinux
+1. yum install policycoreutils-python-utils -> install semanage
 ## Set enforcing and permissive modes for SELinux
 1. vi /etc/selinux/config
 2. SELINUX=disabled / permissive / enforcing
@@ -46,13 +47,19 @@
 2. restorecon -R /directory/
 
 ## Manage SELinux port labels
-1. semanage port -l -> list all ports
-2. semanage port -a -t http_port_t -p tcp 82 -> system can connect to httpd on port 82
+1. man semanage-port
+2. semanage port -l -> list all ports
+3. semanage port -a -t http_port_t -p tcp 82 -> system can connect to httpd on port 82
+4. semanage port -d -t http_port_t -p tcp 82 -> system can no longer connect to httpd on port 82
 
 ## Use boolean settings to modify system SELinux settings
 1. semanage boolean -l -> list all booleans
 2. getsebool -a -> list all booleans
 3. setsebool -P <BOOLEAN> on -> set boolean permanently
+
+## Diagnose and address routine SELinux policy violations
+1. ausearch -c 'httpd'
+2. sealert -a /var/log/audit/audit.log
 
 ## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.

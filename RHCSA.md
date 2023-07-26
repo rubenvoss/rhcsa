@@ -68,7 +68,7 @@ EX200V9K
     <!-- ○ Set enforcing and permissive modes for SELinux -->
     <!-- ○ List and identify SELinux file and process context -->
     <!-- ○ Restore default file contexts -->
-    ○ Manage SELinux port labels
+    <!-- ○ Manage SELinux port labels -->
     <!-- ○ Use boolean settings to modify system SELinux settings -->
     ○ Diagnose and address routine SELinux policy violations
 ● Manage containers
