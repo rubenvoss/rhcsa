@@ -1,5 +1,25 @@
 # RHCSA cheatsheet
 
+## Use input-output redirection (>, >>, |, 2>, etc.)
+1. > redirect into file, overwrite file
+2. >> redirect into file, append file
+3. | redirect to other processes
+4. 2> / 2>> redirects only errors into file
+
+## Log in and switch users in multi-user targets
+1. runlevel
+2. init 3
+
+## Boot into xyz target by default
+1. systemctl get-default
+2. systemctl set-default xyz
+
+## tar & gzip
+1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)
+2. tar -xf etcb.tar -> extract from file etcb.tar (xf = extract from file)
+3. tar -czf etcb.tar.gz etc/ -> make tar and gzip tar
+4. gzip archive.tar -> archive.tar.gz
+
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
@@ -77,22 +97,6 @@
 1. yum config-manager --add-repo http://repo.com/repo -> add repo
 2. /etc/yum.repos.d -> repo configuration files
 3. /etc/yum.conf -> yum conf file
-
-## Boot into xyz target by default
-1. systemctl get-default
-2. systemctl set-default xyz
-
-## Use input-output redirection (>, >>, |, 2>, etc.)
-1. > redirect into file, overwrite file
-2. >> redirect into file, append file
-3. | redirect to other processes
-4. 2> / 2>> redirects only errors into file
-
-## tar & gzip
-1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)
-2. tar -xf etcb.tar -> extract from file etcb.tar (xf = extract from file)
-3. tar -czf etcb.tar.gz etc/ -> make tar and gzip tar
-4. gzip archive.tar -> archive.tar.gz
 
 ## tuned
 1. yum install tuned
