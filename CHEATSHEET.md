@@ -8,11 +8,9 @@
 
 ## Log in and switch users in multi-user targets
 1. runlevel
-2. init 3
-
-## Boot into xyz target by default
-1. systemctl get-default
-2. systemctl set-default xyz
+2. systemctl get-default -> get runlevel
+3. systemctl set-default multi-user.target -> set multiuser runlevel
+4. reboot
 
 ## tar & gzip
 1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)

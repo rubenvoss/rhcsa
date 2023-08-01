@@ -4,7 +4,7 @@ EX200V9K
     <!-- ○ Use input-output redirection (>, >>, |, 2>, etc.) -->
     <!-- ○ Use grep and regular expressions to analyze text -->
     <!-- ○ Access remote systems using SSH -->
-    ○ Log in and switch users in multi-user targets
+    <!-- ○ Log in and switch users in multi-user targets -->
     ○ Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
     <!-- ○ Create and edit text files -->
     <!-- ○ Create, delete, copy, and move files and directories -->
