@@ -5,13 +5,13 @@ EX200V9K
     <!-- ○ Use grep and regular expressions to analyze text -->
     <!-- ○ Access remote systems using SSH -->
     <!-- ○ Log in and switch users in multi-user targets -->
-    ○ Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
+    <!-- ○ Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2 -->
     <!-- ○ Create and edit text files -->
     <!-- ○ Create, delete, copy, and move files and directories -->
-    ○ Create hard and soft links
+    <!-- ○ Create hard and soft links -->
     <!-- ○ List, set, and change standard ugo/rwx permissions -->
-    ○ Locate, read, and use system documentation including man, info, and files in
-    /usr/share/doc
+    <!-- ○ Locate, read, and use system documentation including man, info, and files in
+    /usr/share/doc -->
 ● Create simple shell scripts
     ○ Conditionally execute code (use of: if, test, [], etc.)
     ○ Use Looping constructs (for, etc.) to process file, command line input
