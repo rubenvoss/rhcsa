@@ -18,6 +18,24 @@
 3. tar -czf etcb.tar.gz etc/ -> make tar and gzip tar
 4. gzip archive.tar -> archive.tar.gz
 
+## Conditionally execute code (use of: if, test, [], etc.)
+if [ $1 = 100 ]
+then
+  echo "100"
+else
+  echo "not 100"
+fi
+
+## Use Looping constructs (for, etc.) to process file, command line input
+for file in ./*.log
+do
+echo "log file: $file"
+done
+
+## Processing output of shell commands within a script
+for file in $(ls)
+for file in `ls`
+
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
@@ -142,4 +160,3 @@ vgdisplay
 
 vgextend
 lvextend
-
