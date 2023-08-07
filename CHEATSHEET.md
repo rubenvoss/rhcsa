@@ -36,6 +36,14 @@ done
 for file in $(ls)
 for file in `ls`
 
+## Boot, reboot, and shut down a system normally
+1. shutdown -h now
+2. reboot
+3. systemctl reboot
+
+## Boot systems into different targets manually
+
+
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
