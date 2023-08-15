@@ -42,7 +42,22 @@ for file in `ls`
 3. systemctl reboot
 
 ## Boot systems into different targets manually
+1. systemctl get-default
+2. systemctl list-units --type target
+3. systemctl set-default multi-user.target
+4. systemctl isolate multi-user.target
 
+## Interrupt the boot process in order to gain access to a system:
+1. Interrupt reboot with e
+2. Add rd.break to end of line that starts with linux
+3. Ctrl+x to start with new parameters
+4. mount –o remount,rw /sysroot
+5. chroot /sysroot
+6. passwd root
+7. touch /.autorelabel
+
+## Identify CPU/memory intensive processes and kill processes
+1.
 
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
@@ -107,15 +122,6 @@ for file in `ls`
 
 ## setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
-
-## Change root pw on reboot:
-1. Interrupt reboot with e
-2. Add rd.break to end of line that starts with linux
-3. Ctrl+x to start with new parameters
-4. mount –o remount,rw /sysroot
-5. chroot /sysroot
-6. passwd root
-7. touch /.autorelabel
 
 ## yum
 1. yum config-manager --add-repo http://repo.com/repo -> add repo
