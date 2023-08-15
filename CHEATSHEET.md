@@ -26,6 +26,11 @@ else
   echo "not 100"
 fi
 
+while [ $1 -lt 100 ]
+do
+  echo $1
+  $1 = $1 + 1
+done
 ## Use Looping constructs (for, etc.) to process file, command line input
 for file in ./*.log
 do
@@ -57,8 +62,15 @@ for file in `ls`
 7. touch /.autorelabel
 
 ## Identify CPU/memory intensive processes and kill processes
-1.
+1. top
+2. shift + m -> sort by memory
+3. shift + p -> sort by cpu
+4. kill -9 PID
+5. killall -9 processname
 
+## Adjust process scheduling
+1. nice -n 19 process -> set process priority
+2.
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1

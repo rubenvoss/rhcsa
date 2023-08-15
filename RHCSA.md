@@ -21,7 +21,7 @@ EX200V9K
     <!-- ○ Boot, reboot, and shut down a system normally -->
     <!-- ○ Boot systems into different targets manually -->
     ○ Interrupt the boot process in order to gain access to a system
-    ○ Identify CPU/memory intensive processes and kill processes
+    <!-- ○ Identify CPU/memory intensive processes and kill processes -->
     ○ Adjust process scheduling
     ○ Manage tuning profiles
     ○ Locate and interpret system log files and journals
