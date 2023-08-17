@@ -69,8 +69,17 @@ for file in `ls`
 5. killall -9 processname
 
 ## Adjust process scheduling
-1. nice -n 19 process -> set process priority
-2.
+1. nice -n 19 command -> set process priority
+2. renice -n 19 -p PID -> adjust process priority
+
+## Manage tuning profiles
+1. tuned-adm list -> list available profiles
+2. tuned-adm active -> show active profile
+3. tuned-adm recommend -> recommend a profile
+4. tuned-adm profile <PROFILE> -> set a specific profile
+
+## Locate and interpret system log files and journals
+1.
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
