@@ -79,7 +79,40 @@ for file in `ls`
 4. tuned-adm profile <PROFILE> -> set a specific profile
 
 ## Locate and interpret system log files and journals
+1. cat /var/log/messages
+2. cat /var/log/secure
+3. journalctl -xe -> show all logs
+4. journalctl
+5. journalctl -u httpd -> show logs for httpd
+6. journalctl -p err -> show logs with priority err
+7. journalctl -k -> show kernel logs
+8. journalctl -n 10 -> show last 10 lines
+9. journalctl -f -> follow log
+10. journalctl --since "today" -> show logs since today
+
+## Preserve system journals
+1. mkdir /var/log/journal -> create journal directory
+2. vi /etc/systemd/journald.conf
+3. Storage=persistent
+4. SystemMaxUse=100M
+5. systemctl restart systemd-journald
+## Start, stop, and check the status of network services
+1. systemctl status httpd
+2. systemctl start httpd
+3. systemctl enable httpd
+4. systemctl mask httpd -> disable httpd
+5. systemctl unmask httpd -> enable httpd
+
+## List, create, and delete partitions on GPT disks
+1. lsblk -> overview over block storage devices
+2. fdisk -l -> overview over hard drives
+3. fdisk /dev/vdb -> create new partition
+4. df -h -> overview over mounted partitions
+5. fdisk /dev/vdb -> create new partition
+
+## Create and remove physical volumes
 1.
+
 ## Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
@@ -176,11 +209,7 @@ server <GIVEN_IP> iburst
 4. chronyc sources -v
 5. timedatectl set-ntp true
 
-## List, create, and delete partitions on GPT disks
-1. fdisk -l -> overview over hard drives
-2. lsblk -> overview over block storage devices
-3. df -h -> overview over mounted partitions
-4. fdisb /dev/vdb -> create new partition
+
 
 ## Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vdb1 -> make partition vdb1 into an xfs file system

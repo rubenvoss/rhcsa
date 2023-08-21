@@ -25,8 +25,8 @@ EX200V9K
     <!-- ○ Adjust process scheduling -->
     <!-- ○ Manage tuning profiles -->
     <!-- ○ Locate and interpret system log files and journals -->
-    ○ Preserve system journals
-    ○ Start, stop, and check the status of network services
+    <!-- ○ Preserve system journals -->
+    <!-- ○ Start, stop, and check the status of network services -->
     <!-- ○ Securely transfer files between systems -->
 ● Configure local storage
     <!-- ○ List, create, and delete partitions on GPT disks -->
