@@ -30,11 +30,10 @@ EX200V9K
     <!-- ○ Securely transfer files between systems -->
 ● Configure local storage
     <!-- ○ List, create, and delete partitions on GPT disks -->
-    ○ Create and remove physical volumes
-    ○ Assign physical volumes to volume groups
-    ○ Create and delete logical volumes
-    ○ Configure systems to mount file systems at boot by universally unique ID (UUID)
-    or label
+    <!-- ○ Create and remove physical volumes -->
+    <!-- ○ Assign physical volumes to volume groups -->
+    <!-- ○ Create and delete logical volumes -->
+    <!-- ○ Configure systems to mount file systems at boot by universally unique ID (UUID) or label -->
     ○ Add new partitions and logical volumes, and swap to a system non-destructively
 ● Create and configure file systems
     ○ Create, mount, unmount, and use vfat, ext4, and xfs file systems
