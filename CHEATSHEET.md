@@ -134,6 +134,13 @@ for file in `ls`
 
 ### Configure systems to mount file systems at boot by universally unique ID (UUID) or label
 1. blkid -> show UUIDs
+2. blkid | grep '/dev/lv1' >> /etc/fstab -> add UUID to fstab
+3. vi /etc/fstab
+4. UUID=xyz /mnt ext4 defaults 0 2
+5. mount -a -> mount all partitions in fstab
+
+## Add new partitions and logical volumes, and swap to a system non-destructively
+1
 ### Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
