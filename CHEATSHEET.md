@@ -140,7 +140,11 @@ for file in `ls`
 5. mount -a -> mount all partitions in fstab
 
 ## Add new partitions and logical volumes, and swap to a system non-destructively
-1
+1. lvcreate
+2. swapon
+
+## Create, mount, unmount, and use vfat, ext4, and xfs file systems
+1. 
 ### Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
