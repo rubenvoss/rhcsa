@@ -128,7 +128,7 @@ for file in `ls`
 
 ### Create and delete logical volumes
 1. lvdisplay / lvs -> display logical volumes
-2. lvcreate -L 1G -n lv1 vg1 -> create logical volume lv1 with 1GB from volume group vg1
+2. lvcreate vg1 -L 1G -n lv1  -> create logical volume lv1 with 1GB from volume group vg1
 3. lvextend -L +1G /dev/vg1/lv1 -> extend logical volume lv1 by 1GB
 4. lvresize -L -1G /dev/vg1/lv1 -> shrink logical volume lv1 by 1GB
 5. lvremove /dev/vg1/lv1 -> remove logical volume lv1
@@ -138,7 +138,8 @@ for file in `ls`
 2. blkid | grep '/dev/lv1' >> /etc/fstab -> add UUID to fstab
 3. vi /etc/fstab
 4. UUID=xyz /mnt ext4 defaults 0 2
-5. mount -a -> mount all partitions in fstab & test /etc/fstab before reboot
+5. mount -a -> mount all partitions in fstab
+6. findmnt --verify -> test /etc/fstab before reboot
 
 ## Add new partitions and logical volumes, and swap to a system non-destructively
 1. lvcreate
@@ -148,7 +149,8 @@ for file in `ls`
 1. mkfs.xfs /dev/vg1/lv1
 2. mount /dev/vg1/lv1 /mnt
 3. vi /etc/fstab
-4. mount -a -> test /etc/fstab
+4. mount -a -> mount /etc/fstab
+5. findmnt --verify -> verify /etc/fstab
 ### Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
@@ -250,9 +252,10 @@ server <GIVEN_IP> iburst
 ### Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vdb1 -> make partition vdb1 into an xfs file system
 2. vi /etc/fstab -> automount partitions on boot
-3. mount -a -> test /etc/fstab
-4. /dev/vdb2  /data defaults  0 0
-5. volume location    mount folder location   defaults    0   0
+3. mount -a -> mount /etc/fstab
+4. findmnt --verify -> test /etc/fstab
+5. /dev/vdb2  /data defaults  0 0
+6. volume location    mount folder location   defaults    0   0
 ### Extend existing logical volumes
 
 pvdisplay
