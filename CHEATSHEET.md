@@ -138,14 +138,17 @@ for file in `ls`
 2. blkid | grep '/dev/lv1' >> /etc/fstab -> add UUID to fstab
 3. vi /etc/fstab
 4. UUID=xyz /mnt ext4 defaults 0 2
-5. mount -a -> mount all partitions in fstab
+5. mount -a -> mount all partitions in fstab & test /etc/fstab before reboot
 
 ## Add new partitions and logical volumes, and swap to a system non-destructively
 1. lvcreate
 2. swapon
 
 ## Create, mount, unmount, and use vfat, ext4, and xfs file systems
-1. 
+1. mkfs.xfs /dev/vg1/lv1
+2. mount /dev/vg1/lv1 /mnt
+3. vi /etc/fstab
+4. mount -a -> test /etc/fstab
 ### Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
@@ -247,8 +250,9 @@ server <GIVEN_IP> iburst
 ### Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vdb1 -> make partition vdb1 into an xfs file system
 2. vi /etc/fstab -> automount partitions on boot
-3. /dev/vdb2  /data defaults  0 0
-4. volume location    mount folder location   defaults    0   0
+3. mount -a -> test /etc/fstab
+4. /dev/vdb2  /data defaults  0 0
+5. volume location    mount folder location   defaults    0   0
 ### Extend existing logical volumes
 
 pvdisplay
