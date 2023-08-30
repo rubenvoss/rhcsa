@@ -56,12 +56,13 @@ for file in `ls`
 
 ### Interrupt the boot process in order to gain access to a system:
 1. Interrupt reboot with e
-2. Add rd.break to end of line that starts with linux
-3. Ctrl+x to start with new parameters
-4. mount –o remount,rw /sysroot
-5. chroot /sysroot
-6. passwd root
-7. touch /.autorelabel
+2. change ro -> rw
+3. Add rd.break to end of line that starts with linux
+4. Ctrl+x to start with new parameters
+5. mount –o remount,rw /sysroot
+6. chroot /sysroot
+7. passwd root
+8. touch /.autorelabel
 
 ### Identify CPU/memory intensive processes and kill processes
 1. top
