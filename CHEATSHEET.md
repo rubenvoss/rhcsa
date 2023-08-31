@@ -151,6 +151,9 @@ for file in `ls`
 3. vi /etc/fstab
 4. mount -a -> mount /etc/fstab
 5. findmnt --verify -> verify /etc/fstab
+
+## Mount and unmount network file systems using NFS
+1. 
 ### Use grep and regular expressions to analyze text
 1. grep 'xyz' file1 -> search for xyz in file1
 2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
