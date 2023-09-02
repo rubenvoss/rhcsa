@@ -6,6 +6,18 @@
 3. | redirect to other processes
 4. 2> / 2>> redirects only errors into file
 
+### Use grep and regular expressions to analyze text
+1. grep 'xyz' file1 -> search for xyz in file1
+2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
+3. grep '^Jul 15' Linux_2k.log -> search for all lines starting with Jul 15
+4. grep '[^d]og' file1 -> search for all lines containing og but not dog
+5. grep 'st..id' -> search for all lines containing st followed by any two characters followed by id (e.g. stupid, sts3id, st!did)
+6. grep 'r*' -> search for all lines containing r followed by any number of characters
+7. grep 'r?uben' -> search for all lines containing r followed by any one character followed by uben (e.g. ruben, r3uben, r!uben)
+8. grep -v -> return inverse results
+9. ls -l | grep '.md$' -> return all files ending with .md
+
+## Access remote systems using SSH
 ### Log in and switch users in multi-user targets
 1. runlevel
 2. systemctl get-default -> get runlevel
@@ -17,6 +29,14 @@
 2. tar -xf etcb.tar -> extract from file etcb.tar (xf = extract from file)
 3. tar -czf etcb.tar.gz etc/ -> make tar and gzip tar
 4. gzip archive.tar -> archive.tar.gz
+
+### List, set, and change standard ugo/rwx permissions
+1. chown userxyz:groupxyz file1 - change file ownership
+1.5 chown -R -> change recursively
+2. chmod 777 file1 - change rwx permissions r=4, w=2, x=1
+3. umask -> standard chmod of a user umask 0111 = 0777 - 0111 -> 0666, no execute rights
+4. umask 0000 -> -rw-rw-rw-
+
 
 ## Create simple shell scripts
 ### Conditionally execute code (use of: if, test, [], etc.)
@@ -41,6 +61,8 @@ done
 ### Processing output of shell commands within a script
 for file in $(ls)
 for file in `ls`
+
+### Processing shell command exit codes
 
 ## Operate running systems
 ### Boot, reboot, and shut down a system normally
@@ -106,6 +128,8 @@ for file in `ls`
 4. systemctl mask httpd -> disable httpd
 5. systemctl unmask httpd -> enable httpd
 
+### Securely transfer files between systems
+
 ## Configure local storage
 ### List, create, and delete partitions on GPT disks
 1. lsblk -> overview over block storage devices
@@ -153,17 +177,13 @@ for file in `ls`
 5. findmnt --verify -> verify /etc/fstab
 
 ## Mount and unmount network file systems using NFS
-1. 
-### Use grep and regular expressions to analyze text
-1. grep 'xyz' file1 -> search for xyz in file1
-2. grep '[AaBb]nanas' file1 -> search for Ananas and Bananas in file1
-3. grep '^Jul 15' Linux_2k.log -> search for all lines starting with Jul 15
-4. grep '[^d]og' file1 -> search for all lines containing og but not dog
-5. grep 'st..id' -> search for all lines containing st followed by any two characters followed by id (e.g. stupid, sts3id, st!did)
-6. grep 'r*' -> search for all lines containing r followed by any number of characters
-7. grep 'r?uben' -> search for all lines containing r followed by any one character followed by uben (e.g. ruben, r3uben, r!uben)
-8. grep -v -> return inverse results
-9. ls -l | grep '.md$' -> return all files ending with .md
+
+## Configure autofs
+
+## Extend existing logical volumes
+
+## Create and configure set-GID directories for collaboration
+
 
 ### Users and Groups
 1. groupadd newgroup -> create new group
@@ -172,12 +192,7 @@ for file in `ls`
 4. useradd newuser -s /sbin/nologin -> create user without login shell
 5. passwd newuser
 
-### chown, chmod, umask
-1. chown userxyz:groupxyz file1 - change file ownership
-1.5 chown -R -> change recursively
-2. chmod 777 file1 - change rwx permissions r=4, w=2, x=1
-3. umask -> standard chmod of a user umask 0111 = 0777 - 0111 -> 0666, no execute rights
-4. umask 0000 -> -rw-rw-rw-
+
 
 ### ACL File permissions
 1. getfacl file -> get ACL permissions
