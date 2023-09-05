@@ -182,8 +182,22 @@ for file in `ls`
 
 ## Extend existing logical volumes
 
+### setgid
+1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
 ## Create and configure set-GID directories for collaboration
+1. groupadd <GROUP>
+2. cat /etc/group
+3. mkdir -p /directory/
+4. chown nobody:GROUP /directory/
+5. chmod g+s /directory/
+6. chmod 770 /directory/
 
+## Configure disk compression
+1. yum install vdo
+2. empty disk with no partitions
+3. vdo create --name=vdo1 --device=/dev/sdc --vdoLogicalSize=10G --writePolicy=auto 
+4. mkfs.xfs /dev/mapper/vdo1
+5. mount /dev/mapper/vdo1 /mnt
 
 ### Users and Groups
 1. groupadd newgroup -> create new group
@@ -191,6 +205,7 @@ for file in `ls`
 3. useradd newuser -G newgroup -> specify secondary group
 4. useradd newuser -s /sbin/nologin -> create user without login shell
 5. passwd newuser
+6. usermod -aG group user
 
 
 
@@ -230,8 +245,7 @@ for file in `ls`
 1. ausearch -c 'httpd'
 2. sealert -a /var/log/audit/audit.log
 
-### setgid
-1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
+
 
 ### yum
 1. yum config-manager --add-repo http://repo.com/repo -> add repo
