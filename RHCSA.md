@@ -40,8 +40,8 @@ EX200V8K
 ○ Mount and unmount network file systems using NFS
 ○ Extend existing logical volumes
 <!-- ○ Create and configure set-GID directories for collaboration -->
-○ Configure disk compression
-○ Manage layered storage
+<!-- ○ Configure disk compression -->
+<!-- ○ Manage layered storage -->
 ○ Diagnose and correct file permission problems
 ● Deploy, configure, and maintain systems
 ○ Schedule tasks using at and cron

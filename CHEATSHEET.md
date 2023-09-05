@@ -199,6 +199,19 @@ for file in `ls`
 4. mkfs.xfs /dev/mapper/vdo1
 5. mount /dev/mapper/vdo1 /mnt
 
+## Manage layered storage
+1. yum install stratis-cli
+2. systemctl start stratisd
+3. systemctl enable stratisd
+4. stratis pool create pool1 /dev/sdb /dev/sdc
+5. stratis fs create pool1 fs1
+6. stratis fs list
+7. mount /dev/stratis/pool1/fs1 /mnt
+8. stratis pool add-data pool1 /dev/sdd
+9. stratis fs snapshot pool1 fs1 fs1-snap1
+10. stratis fs list
+11. stratis destroy pool1 snapshot1
+
 ### Users and Groups
 1. groupadd newgroup -> create new group
 2. useradd newuser -> create new user
