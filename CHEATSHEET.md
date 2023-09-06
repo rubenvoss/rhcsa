@@ -184,7 +184,7 @@ for file in `ls`
 
 ### setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
-## Create and configure set-GID directories for collaboration
+### Create and configure set-GID directories for collaboration
 1. groupadd <GROUP>
 2. cat /etc/group
 3. mkdir -p /directory/
@@ -192,14 +192,14 @@ for file in `ls`
 5. chmod g+s /directory/
 6. chmod 770 /directory/
 
-## Configure disk compression
+### Configure disk compression
 1. yum install vdo
 2. empty disk with no partitions
 3. vdo create --name=vdo1 --device=/dev/sdc --vdoLogicalSize=10G --writePolicy=auto 
 4. mkfs.xfs /dev/mapper/vdo1
 5. mount /dev/mapper/vdo1 /mnt
 
-## Manage layered storage
+### Manage layered storage
 1. yum install stratis-cli
 2. systemctl start stratisd
 3. systemctl enable stratisd
@@ -210,7 +210,16 @@ for file in `ls`
 8. stratis pool add-data pool1 /dev/sdd
 9. stratis fs snapshot pool1 fs1 fs1-snap1
 10. stratis fs list
-11. stratis destroy pool1 snapshot1
+11. stratis fs destroy pool1 snapshot1
+12. stratis pool destroy pool1
+13. stratis pool list
+
+### Diagnose and correct file permission problems
+1. getfacl file1 -> get ACL permissions
+
+## Deploy, configure, and maintain systems
+
+### Schedule tasks using at and cron
 
 ### Users and Groups
 1. groupadd newgroup -> create new group
@@ -224,7 +233,7 @@ for file in `ls`
 
 ### ACL File permissions
 1. getfacl file -> get ACL permissions
-2. setfacl -m u:user1:rw- file1 -> set filepermissions
+2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
 
 ## SELinux
 1. yum install policycoreutils-python-utils -> install semanage
