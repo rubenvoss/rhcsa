@@ -220,7 +220,13 @@ for file in `ls`
 ## Deploy, configure, and maintain systems
 
 ### Schedule tasks using at and cron
-1. 
+1. yum install at
+2. systemctl start atd && systemctl enable atd
+3. at now + 1min
+4. at 01:00 november 1
+5. atrm <JOBID>
+6. 
+
 
 ### Users and Groups
 1. groupadd newgroup -> create new group
