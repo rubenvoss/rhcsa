@@ -220,13 +220,16 @@ for file in `ls`
 ## Deploy, configure, and maintain systems
 
 ### Schedule tasks using at and cron
-1. yum install at
-2. systemctl start atd && systemctl enable atd
-3. at now + 1min
-4. at 01:00 november 1
-5. atrm <JOBID>
-6. 
-
+1.timedatectl && timedatectl set-timezone
+2. yum install at
+3. systemctl start atd && systemctl enable atd
+4. at now + 1min
+5. at 01:00 november 1
+6. atrm <JOBID>
+7. crontab -l -> list
+6. crontab -e -> edit
+7. minute hour day(month) month day(week)
+8. ls -l /etc/cron.daily/
 
 ### Users and Groups
 1. groupadd newgroup -> create new group
