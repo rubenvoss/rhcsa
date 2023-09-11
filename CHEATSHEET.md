@@ -231,13 +231,43 @@ for file in `ls`
 7. minute hour day(month) month day(week)
 8. ls -l /etc/cron.daily/
 
+### Start and stop services and configure services to start automatically at boot
+1. systemctl start httpd
+2. systemctl enable httpd -> enable service on boot
+3. systemctl reload httpd -> reload config
+4. systemctl restart httpd -> restart service
+5. systemctl mask httpd -> disable service
+
+### Configure systems to boot into a specific target automatically
+1. systemctl list-units --type target
+2. systemctl get-default
+3. systemctl set-default multi-user.target -> set runlevel on boot
+4. systemctl isolate multi-user.target -> change runlevel on the fly
+5. systemctl reboot
+
+
+### Configure time service clients
+
+### NTP
+configure the NTP server to run at xyz.com
+-> NTP will use chrony & chronyd
+1. yum install chrony
+2. vi /etc/chrony.conf
+#pool...
+server <GIVEN_IP> iburst
+3. systemctl restart chronyd
+3.5 systemctl enable chronyd
+4. chronyc sources -v
+5. timedatectl set-ntp true
+
+
 ### Users and Groups
 1. groupadd newgroup -> create new group
 2. useradd newuser -> create new user
 3. useradd newuser -G newgroup -> specify secondary group
 4. useradd newuser -s /sbin/nologin -> create user without login shell
 5. passwd newuser
-6. usermod -aG group user
+6. usermod user -aG group -> add user to group
 
 
 
@@ -299,17 +329,7 @@ for file in `ls`
 3. nice -n # process -> set process priority
 4. renice -n # PID -> adjust process priority
 
-### NTP
-configure the NTP server to run at xyz.com
--> NTP will use chrony & chronyd
-1. yum install chrony
-2. vi /etc/chrony.conf
-#pool...
-server <GIVEN_IP> iburst
-3. systemctl restart chronyd
-3.5 systemctl enable chronyd
-4. chronyc sources -v
-5. timedatectl set-ntp true
+
 
 
 
