@@ -247,6 +247,17 @@ for file in `ls`
 
 
 ### Configure time service clients
+1. timedatectl set-timezone Europe/Berlin
+2. timedatectl set-ntp true
+3. chronyc sources -v
+4. vi /etc/chrony.conf
+5. systemctl restart chronyd
+
+### Install and update software packages from Red Hat Network, a remote repository, or from the local file system
+1. 
+
+
+
 
 ### NTP
 configure the NTP server to run at xyz.com
