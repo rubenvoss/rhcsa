@@ -254,9 +254,32 @@ for file in `ls`
 5. systemctl restart chronyd
 
 ### Install and update software packages from Red Hat Network, a remote repository, or from the local file system
-1. 
+1. yum search <PACKAGE>
+2. yum list <PACKAGE>
+3. yum install <PACKAGE>
+4. yum update <PACKAGE>
+5. yum localinstall <PACKAGE>
+6. yum remove <PACKAGE>
+7. yum provides <PACKAGE>
+8. yum repolist
+9. yum history
+10. yum history rollback <ID>
+11. yum history undo <ID>
+12. yum history redo <ID>
 
 
+13. yum install dnf-utils
+14. yum config-manager --add-repo http://repo.com/repo
+15. /etc/yum.repos.d -> repo configuration files
+16. /etc/yum.conf -> yum conf file
+17. yum install createrepo
+18. createrepo /path/to/repo
+19. yum config-manager --add-repo file:///path/to/repo
+20. yum repolist
+21. yum disable <REPO>
+
+
+### Work with package module streams
 
 
 ### NTP
@@ -320,10 +343,10 @@ server <GIVEN_IP> iburst
 
 
 
-### yum
+<!-- ### yum
 1. yum config-manager --add-repo http://repo.com/repo -> add repo
 2. /etc/yum.repos.d -> repo configuration files
-3. /etc/yum.conf -> yum conf file
+3. /etc/yum.conf -> yum conf file -->
 
 ### tuned
 1. yum install tuned
