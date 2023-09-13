@@ -284,8 +284,11 @@ for file in `ls`
 2. dnf module info --profile <MODULE>
 3. dnf module install <MODULE>
 4. dnf module install <MODULE>:8.0/minimal
-5. dnf module reset <MODULE>
+5. dnf module remove <MODULE>
+6. dnf module reset <MODULE>
 
+### Modify the system bootloader
+1. 
 ### NTP
 configure the NTP server to run at xyz.com
 -> NTP will use chrony & chronyd
