@@ -288,7 +288,15 @@ for file in `ls`
 6. dnf module reset <MODULE>
 
 ### Modify the system bootloader
-1. 
+
+
+## Manage basic networking
+
+### Configure IPv4 and IPv6 addresses
+
+
+### Configure hostname resolution
+1. hostnamectl set-hostname xyz.com
 
 
 ### NTP
