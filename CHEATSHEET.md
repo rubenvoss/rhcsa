@@ -280,7 +280,11 @@ for file in `ls`
 
 
 ### Work with package module streams
-
+1. dnf module list
+2. dnf module info --profile <MODULE>
+3. dnf module install <MODULE>
+4. dnf module install <MODULE>:8.0/minimal
+5. dnf module reset <MODULE>
 
 ### NTP
 configure the NTP server to run at xyz.com
