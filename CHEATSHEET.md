@@ -289,6 +289,8 @@ for file in `ls`
 
 ### Modify the system bootloader
 1. 
+
+
 ### NTP
 configure the NTP server to run at xyz.com
 -> NTP will use chrony & chronyd
