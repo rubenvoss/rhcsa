@@ -297,8 +297,12 @@ for file in `ls`
 1. nmcli connection show
 2. ip addr
 3. nmcli device status
-4. nmcli device show
+4. nmcli device show enp0s8
 5. nmcli connection show
+6. nmcli connection add con-name eth0 ifname enp0s8 type ethernet ip4 10.0.2.16/24
+7. nmcli connection up eth0
+8. nmcli connection down eth0
+9. nmcli connection modify eth0 ipv4.addresses 10.0.2.15/24
 
 ### Configure hostname resolution
 1. hostnamectl set-hostname xyz.com
