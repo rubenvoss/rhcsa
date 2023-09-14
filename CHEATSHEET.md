@@ -288,7 +288,8 @@ for file in `ls`
 6. dnf module reset <MODULE>
 
 ### Modify the system bootloader
-
+1. vi /etc/default/grub
+2. grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ## Manage basic networking
 
