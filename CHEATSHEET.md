@@ -294,7 +294,11 @@ for file in `ls`
 ## Manage basic networking
 
 ### Configure IPv4 and IPv6 addresses
-
+1. nmcli connection show
+2. ip addr
+3. nmcli device status
+4. nmcli device show
+5. nmcli connection show
 
 ### Configure hostname resolution
 1. hostnamectl set-hostname xyz.com
