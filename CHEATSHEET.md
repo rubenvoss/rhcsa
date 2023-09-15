@@ -315,8 +315,19 @@ for file in `ls`
 18. nmcli connection down eth1
 19. nmcli connection up eth1
 
+20. nmtui
+
 ### Configure hostname resolution
 1. hostnamectl set-hostname xyz.com
+2. hostname
+3. cat /etc/resolv.conf
+4. nmcli connection modify enp0s3 ipv4.dns "8.8.8.8"
+5. nmcli connection reload
+6. systemctl restart NetworkManager
+7. cat /etc/relov.conf
+8. vi /etc/hosts
+9. 10.0.2.15 testserver.local testserver
+10. ping testserver
 
 
 ### NTP
