@@ -50,9 +50,9 @@ EX200V8K
 <!-- ○ Configure time service clients -->
 <!-- ○ Install and update software packages from Red Hat Network, a remote repository, or from the local file system -->
 <!-- ○ Work with package module streams -->
-○ Modify the system bootloader
+<!-- ○ Modify the system bootloader -->
 ● Manage basic networking
-○ Configure IPv4 and IPv6 addresses
+<!-- ○ Configure IPv4 and IPv6 addresses -->
 <!-- ○ Configure hostname resolution -->
 ○ Configure network services to start automatically at boot
 ○ Restrict network access using firewall-cmd/firewalld

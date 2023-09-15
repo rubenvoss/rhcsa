@@ -303,6 +303,17 @@ for file in `ls`
 7. nmcli connection up eth0
 8. nmcli connection down eth0
 9. nmcli connection modify eth0 ipv4.addresses 10.0.2.15/24
+10. nmcli connection modify eth0 ipv4.gateway 10.0.2.1
+11. nmcli connection modify eth0 ipv4.method manual
+12. nmcli connection down eth0
+13. nmcli connection up eth0
+
+14. nmcli connection add con-name eth0 ifname enp0s8 type ethernet ip6 2006:ac81::1105/64 gw6 2006:ac81:: 1101
+15. nmcli connection modify eth0 ipv6.addresses 2006:ac81::1105/64
+16. nmcli connection modify eth0 ipv6.gateway 2006:ac81::1105
+17. nmcli connection modify eth0 ipv6.method manual
+18. nmcli connection down eth1
+19. nmcli connection up eth1
 
 ### Configure hostname resolution
 1. hostnamectl set-hostname xyz.com
