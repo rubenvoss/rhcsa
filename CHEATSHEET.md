@@ -329,6 +329,9 @@ for file in `ls`
 9. 10.0.2.15 testserver.local testserver
 10. ping testserver
 
+### Configure network services to start automatically at boot
+1. systemctl...
+2. 
 
 ### NTP
 configure the NTP server to run at xyz.com
