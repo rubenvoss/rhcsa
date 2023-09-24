@@ -331,7 +331,38 @@ for file in `ls`
 
 ### Configure network services to start automatically at boot
 1. systemctl...
-2. 
+2. nmcli con mod eth0 connection.autoconnect yes -> enable connection on boot
+
+### Restrict network access using firewall-cmd/firewalld
+1. firewall-cmd --get-zones
+2. firewall-cmd --new-zone xyz --permanent
+3. firewall-cmd --reload
+4. firewall-cmd --zone xyz --add-service http --permanent
+5. firewall-cmd --reload
+6. firewall-cmd --zone xyz --list-all
+7. firewall-cmd --change-interface enp0s8 --zone xyz --permanent
+8. firewall-cmd --get-active-zones
+9. firewall-cmd --set-default-zone xyz
+10. firewall-cmd --get-default-zone
+11. firewall-cmd --reload
+12. firewall-cmd --get-services
+13. firewall-cmd --add-port 8080/tcp --permanent
+14. firewall-cmd --reload
+15. firewall-cmd --zone xyz --remove-service http --permanent
+16. firewall-cmd --reload
+17. firewall-cmd --zone xyz --remove-port 8080/tcp --permanent
+18. firewall-cmd --reload
+
+## Manage users and groups
+
+### Create, delete, and modify local user accounts
+1. useradd user1
+2. passwd user1
+3. groupadd group1
+4. usermod -aG group1 user1
+5. userdel user1
+6. userdel -r user1 -> delete user and home directory
+
 
 ### NTP
 configure the NTP server to run at xyz.com
@@ -340,10 +371,10 @@ configure the NTP server to run at xyz.com
 2. vi /etc/chrony.conf
 #pool...
 server <GIVEN_IP> iburst
-3. systemctl restart chronyd
+1. systemctl restart chronyd
 3.5 systemctl enable chronyd
-4. chronyc sources -v
-5. timedatectl set-ntp true
+1. chronyc sources -v
+2. timedatectl set-ntp true
 
 
 ### Users and Groups

@@ -55,7 +55,7 @@ EX200V8K
 <!-- ○ Configure IPv4 and IPv6 addresses -->
 <!-- ○ Configure hostname resolution -->
 <!-- ○ Configure network services to start automatically at boot -->
-○ Restrict network access using firewall-cmd/firewalld
+<!-- ○ Restrict network access using firewall-cmd/firewalld -->
 ● Manage users and groups
 ○ Create, delete, and modify local user accounts
 ○ Change passwords and adjust password aging for local user accounts
