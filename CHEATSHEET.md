@@ -384,7 +384,17 @@ for file in `ls`
 ## Manage security
 
 ### Configure firewall settings using firewall-cmd/firewalld
-1. firewall-cmd --get-zones
+1. vi /etc/sysctl.conf
+2. net.ipv4.ip_forward=1
+3. sysctl -p -> reload sysctl.conf
+4. sysctl -a | grep ip_forward -> check if ip_forward is enabled
+5. dnf install firewall-config (GUI)
+
+### Create and use file access control lists
+1. getfacl file1 -> get ACL permissions
+2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
+
+
 
 ### NTP
 configure the NTP server to run at xyz.com
