@@ -363,6 +363,28 @@ for file in `ls`
 5. userdel user1
 6. userdel -r user1 -> delete user and home directory
 
+### Change passwords and adjust password aging for local user accounts
+1. chage -l user1 -> show password aging
+2. chage -M 90 user1 -> set max password age to 90 days
+3. chage ruben -> change password aging for ruben
+
+### Create, delete, and modify local groups and group memberships
+1. groupadd group1
+2. groupdel group1
+3. groupmod -n group2 group1 -> rename group1 to group2
+4. groupmems -g group1 -l -> list group members
+5. groupmems -g group1 -d user1 -> delete user1 from group1
+6. groupmems -g group1 -a user1 -> add user1 to group1
+
+### Configure superuser access
+1. visudo
+2. ruben ALL=(root) /bin/ls, bin/df -h -> allow user ruben to run ls and df -h as root
+3. USERNAME HOSTNAME=(USER) COMMAND -> allow user USERNAME to run COMMAND as USER on HOSTNAME
+
+## Manage security
+
+### Configure firewall settings using firewall-cmd/firewalld
+1. firewall-cmd --get-zones
 
 ### NTP
 configure the NTP server to run at xyz.com

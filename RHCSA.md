@@ -57,10 +57,10 @@ EX200V8K
 <!-- ○ Configure network services to start automatically at boot -->
 <!-- ○ Restrict network access using firewall-cmd/firewalld -->
 ● Manage users and groups
-○ Create, delete, and modify local user accounts
-○ Change passwords and adjust password aging for local user accounts
-○ Create, delete, and modify local groups and group memberships
-○ Configure superuser access
+<!-- ○ Create, delete, and modify local user accounts -->
+<!-- ○ Change passwords and adjust password aging for local user accounts -->
+<!-- ○ Create, delete, and modify local groups and group memberships -->
+<!-- ○ Configure superuser access -->
 ● Manage security
 ○ Configure firewall settings using firewall-cmd/firewalld
 ○ Create and use file access control lists
