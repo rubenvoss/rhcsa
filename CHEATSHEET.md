@@ -422,6 +422,8 @@ server <GIVEN_IP> iburst
 ### ACL File permissions
 1. getfacl file -> get ACL permissions
 2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
+3. sefacl -x u:user1 file1 -> remove filepermissions for specific user
+4. 
 
 ## SELinux
 1. yum install policycoreutils-python-utils -> install semanage
