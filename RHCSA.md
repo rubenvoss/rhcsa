@@ -63,7 +63,7 @@ EX200V8K
 <!-- ○ Configure superuser access -->
 ● Manage security
 ○ Configure firewall settings using firewall-cmd/firewalld
-○ Create and use file access control lists
+<!-- ○ Create and use file access control lists -->
 ○ Configure key-based authentication for SSH
 ○ Set enforcing and permissive modes for SELinux
 ○ List and identify SELinux file and process context
