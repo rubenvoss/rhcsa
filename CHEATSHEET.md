@@ -396,6 +396,8 @@ for file in `ls`
 3. setfacl -x u:user1 file1 -> remove filepermissions for specific user
 4. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
 
+### Configure key-based authentication for SSH
+1. 
 
 ### NTP
 configure the NTP server to run at xyz.com
