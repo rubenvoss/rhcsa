@@ -393,8 +393,9 @@ for file in `ls`
 ### Create and use file access control lists
 1. getfacl file1 -> get ACL permissions
 2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
-3. setfacl -x u:user1 file1 -> remove filepermissions for specific user
-4. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
+3. setfacl -m g:group1:rw- file1 -> set filepermissions for specific group
+4. setfacl -x u:user1 file1 -> remove filepermissions for specific user
+5. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
 
 ### Configure key-based authentication for SSH
 1. 
