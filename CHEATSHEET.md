@@ -393,7 +393,8 @@ for file in `ls`
 ### Create and use file access control lists
 1. getfacl file1 -> get ACL permissions
 2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
-
+3. setfacl -x u:user1 file1 -> remove filepermissions for specific user
+4. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
 
 
 ### NTP
@@ -417,13 +418,6 @@ server <GIVEN_IP> iburst
 5. passwd newuser
 6. usermod user -aG group -> add user to group
 
-
-
-### ACL File permissions
-1. getfacl file -> get ACL permissions
-2. setfacl -m u:user1:rw- file1 -> set filepermissions for specific user
-3. setfacl -x u:user1 file1 -> remove filepermissions for specific user
-4. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
 
 ## SELinux
 1. yum install policycoreutils-python-utils -> install semanage
