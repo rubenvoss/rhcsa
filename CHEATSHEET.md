@@ -40,7 +40,8 @@
 
 ## Create simple shell scripts
 ### Conditionally execute code (use of: if, test, [], etc.)
-if [ $1 = 100 ]
+man test
+if [ $1 -eq 100 ]
 then
   echo "100"
 else
@@ -63,6 +64,13 @@ for file in $(ls)
 for file in `ls`
 
 ### Processing shell command exit codes
+1. echo $? -> show exit code of last command
+if [ $? -eq 0 ]
+then
+  echo "success"
+else
+  echo "failure"
+fi
 
 ## Operate running systems
 ### Boot, reboot, and shut down a system normally
