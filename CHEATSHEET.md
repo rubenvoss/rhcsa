@@ -397,8 +397,42 @@ for file in `ls`
 4. setfacl -x u:user1 file1 -> remove filepermissions for specific user
 5. setfacl -R -m u:user1:rw- dir1/ -> set filepermissions for specific user recursively
 
-### Configure key-based authentication for SSH
-1. 
+### Set enforcing and permissive modes for SELinux
+1. sestatus -> show SELinux status
+2. vi /etc/selinux/config
+3. SELINUX=disabled / permissive / enforcing
+4. reboot
+5. sestatus
+
+### List and identify SELinux file and process context
+1. ls -lZ -> file context
+2. ls -dZ -> directory context
+3. ps -auxZ -> process context
+
+
+### Restore default file contexts
+1. chcon unconfined_u:object_r:tmp_t:s0 file1
+2. restorecon file1
+3. restorecon -R /directory/
+
+### Manage SELinux port labels
+1. man semanage-port
+2. semanage port -l -> list all ports
+3. semanage port -a -t http_port_t -p tcp 82 -> system can connect to httpd on port 82
+4. semanage port -d -t http_port_t -p tcp 82 -> system can no longer connect to httpd on port 82
+
+
+### Use boolean settings to modify system SELinux settings
+1. semanage boolean -l -> list all booleans
+2. getsebool -a -> list all booleans
+3. setsebool -P <BOOLEAN> on -> set boolean permanently (P)
+
+### Diagnose and address routine SELinux policy violations
+1. yum install setroubleshoot-server
+2. sealert -a /var/log/audit/audit.log
+3. ausearch -c 'httpd'
+4. grep 1415714880.156:29 /var/log/audit/audit.log | audit2why
+
 
 ### NTP
 configure the NTP server to run at xyz.com
@@ -420,46 +454,6 @@ server <GIVEN_IP> iburst
 4. useradd newuser -s /sbin/nologin -> create user without login shell
 5. passwd newuser
 6. usermod user -aG group -> add user to group
-
-
-## SELinux
-1. yum install policycoreutils-python-utils -> install semanage
-### Set enforcing and permissive modes for SELinux
-1. vi /etc/selinux/config
-2. SELINUX=disabled / permissive / enforcing
-3. reboot
-4. sestatus
-
-### List and identify SELinux file and process context
-1. ls -lZ -> file context
-2. ls -dZ -> directory context
-3. ps -auxZ -> process context
-
-### Restore default file contexts
-1. restorecon file1
-2. restorecon -R /directory/
-
-### Manage SELinux port labels
-1. man semanage-port
-2. semanage port -l -> list all ports
-3. semanage port -a -t http_port_t -p tcp 82 -> system can connect to httpd on port 82
-4. semanage port -d -t http_port_t -p tcp 82 -> system can no longer connect to httpd on port 82
-
-### Use boolean settings to modify system SELinux settings
-1. semanage boolean -l -> list all booleans
-2. getsebool -a -> list all booleans
-3. setsebool -P <BOOLEAN> on -> set boolean permanently
-
-### Diagnose and address routine SELinux policy violations
-1. ausearch -c 'httpd'
-2. sealert -a /var/log/audit/audit.log
-
-
-
-<!-- ### yum
-1. yum config-manager --add-repo http://repo.com/repo -> add repo
-2. /etc/yum.repos.d -> repo configuration files
-3. /etc/yum.conf -> yum conf file -->
 
 ### tuned
 1. yum install tuned

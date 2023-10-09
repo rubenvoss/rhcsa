@@ -64,12 +64,12 @@ EX200V8K
 ● Manage security
 ○ Configure firewall settings using firewall-cmd/firewalld
 <!-- ○ Create and use file access control lists -->
-○ Configure key-based authentication for SSH
-○ Set enforcing and permissive modes for SELinux
-○ List and identify SELinux file and process context
-○ Restore default file contexts
-○ Manage SELinux port labels
-○ Use boolean settings to modify system SELinux settings
+<!-- ○ Configure key-based authentication for SSH -->
+<!-- ○ Set enforcing and permissive modes for SELinux -->
+<!-- ○ List and identify SELinux file and process context -->
+<!-- ○ Restore default file contexts -->
+<!-- ○ Manage SELinux port labels -->
+<!-- ○ Use boolean settings to modify system SELinux settings -->
 ○ Diagnose and address routine SELinux policy violations
 As with all Red Hat performance-based exams, configurations must persist after reboot without
 intervention.
