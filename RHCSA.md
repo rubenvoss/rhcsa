@@ -11,7 +11,7 @@ EX200V8K
 <!-- ○ Create hard and soft links -->
 <!-- ○ List, set, and change standard ugo/rwx permissions -->
 <!-- ○ Locate, read, and use system documentation including man, info, and files in /usr/share/doc -->
-<!-- ● Create simple shell scripts -->
+● Create simple shell scripts
 <!-- ○ Conditionally execute code (use of: if, test, [], etc.) -->
 <!-- ○ Use Looping constructs (for, etc.) to process file, command line input -->
 <!-- ○ Process script inputs ($1, $2, etc.) -->

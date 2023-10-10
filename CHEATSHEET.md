@@ -17,12 +17,12 @@
 8. grep -v -> return inverse results
 9. ls -l | grep '.md$' -> return all files ending with .md
 
-## Access remote systems using SSH
 ### Log in and switch users in multi-user targets
 1. runlevel
 2. systemctl get-default -> get runlevel
 3. systemctl set-default multi-user.target -> set multiuser runlevel
 4. reboot
+5. su - user1 -> switch user
 
 ### tar & gzip
 1. tar -cf etcb.tar ./etc -> create tar archive from dir /etc (cf = create from file)
@@ -62,6 +62,11 @@ done
 ### Processing output of shell commands within a script
 for file in $(ls)
 for file in `ls`
+
+for file in $(ls /var/log)
+do
+  echo "log file: $file"
+done
 
 ### Processing shell command exit codes
 1. echo $? -> show exit code of last command
