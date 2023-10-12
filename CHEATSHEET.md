@@ -107,7 +107,7 @@ fi
 5. killall -9 processname
 
 ### Adjust process scheduling
-1. nice -n 19 command -> set process priority
+1. nice -n 19 command -> start process with low priority
 2. renice -n 19 -p PID -> adjust process priority
 
 ### Manage tuning profiles
@@ -140,8 +140,6 @@ fi
 3. systemctl enable httpd
 4. systemctl mask httpd -> disable httpd
 5. systemctl unmask httpd -> enable httpd
-
-### Securely transfer files between systems
 
 ## Configure local storage
 ### List, create, and delete partitions on GPT disks
