@@ -98,6 +98,7 @@ fi
 6. chroot /sysroot
 7. passwd root
 8. touch /.autorelabel
+9. exit && exit
 
 ### Identify CPU/memory intensive processes and kill processes
 1. top
@@ -134,6 +135,8 @@ fi
 3. Storage=persistent
 4. SystemMaxUse=100M
 5. systemctl restart systemd-journald
+
+
 ### Start, stop, and check the status of network services
 1. systemctl status httpd
 2. systemctl start httpd
