@@ -13,9 +13,8 @@
 4. grep '[^d]og' file1 -> search for all lines containing og but not dog
 5. grep 'st..id' -> search for all lines containing st followed by any two characters followed by id (e.g. stupid, sts3id, st!did)
 6. grep 'r*' -> search for all lines containing r followed by any number of characters
-7. grep 'r?uben' -> search for all lines containing r followed by any one character followed by uben (e.g. ruben, r3uben, r!uben)
-8. grep -v -> return inverse results
-9. ls -l | grep '.md$' -> return all files ending with .md
+7. grep -v -> return inverse results
+9. ls -l | grep '.md$' -> return all files **ending** with .md
 
 ### Log in and switch users in multi-user targets
 1. runlevel
