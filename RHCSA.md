@@ -34,11 +34,11 @@ EX200V8K
 <!-- ○ Assign physical volumes to volume groups -->
 <!-- ○ Create and delete logical volumes -->
 <!-- ○ Configure systems to mount file systems at boot by universally unique ID (UUID) or label -->
-○ Add new partitions and logical volumes, and swap to a system non-destructively
+<!-- ○ Add new partitions and logical volumes, and swap to a system non-destructively -->
 ● Create and configure file systems
 <!-- ○ Create, mount, unmount, and use vfat, ext4, and xfs file systems -->
-○ Mount and unmount network file systems using NFS
-○ Extend existing logical volumes
+<!-- ○ Mount and unmount network file systems using NFS -->
+<!-- ○ Extend existing logical volumes -->
 <!-- ○ Create and configure set-GID directories for collaboration -->
 <!-- ○ Configure disk compression -->
 <!-- ○ Manage layered storage -->

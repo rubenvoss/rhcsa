@@ -180,7 +180,7 @@ fi
 7. df -h -> see mounted lvs / partitions
 8. mount | grep '/dev/lv1' -> see mounted lvs / partitions
 
-## Add new partitions and logical volumes, and swap to a system non-destructively
+### Add new partitions and logical volumes, and swap to a system non-destructively
 1. lvcreate
 2. mkswap /dev/vg1/lv1
 3. swapon /dev/vg1/lv1
@@ -188,18 +188,20 @@ fi
 5. vi /etc/fstab
 6. /dev/vg1/lv1 swap swap defaults 0 0
 
-## Create, mount, unmount, and use vfat, ext4, and xfs file systems
+## Create and configure file systems
+### Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vg1/lv1
 2. mount /dev/vg1/lv1 /mnt
 3. vi /etc/fstab
 4. mount -a -> mount /etc/fstab
 5. findmnt --verify -> verify /etc/fstab
 
-## Mount and unmount network file systems using NFS
+### Mount and unmount network file systems using NFS
+1. yum install nfs-utils
+2. mount -t nfs 1.2.3.4:/path/to/share /mnt
+3. vi /etc/fstab
+4. 1.2.3.4:/path/to/share /mnt nfs defaults 0 0
 
-## Configure autofs
-
-## Extend existing logical volumes
 
 ### setgid
 1. chmod g+s /directory/ -> This means that all new files and subdirectories created within the current directory inherit the group ID of the directory, rather than the primary group ID of the user who created the file.
