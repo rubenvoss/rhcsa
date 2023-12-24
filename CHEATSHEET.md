@@ -177,6 +177,7 @@ fi
 4. UUID=xyz /mnt ext4 defaults 0 2
 5. mount -a -> mount all partitions in fstab
 6. findmnt --verify -> test /etc/fstab before reboot
+7. df -h -> see mounted lvs / partitions
 
 ## Add new partitions and logical volumes, and swap to a system non-destructively
 1. lvcreate
