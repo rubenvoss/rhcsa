@@ -178,10 +178,15 @@ fi
 5. mount -a -> mount all partitions in fstab
 6. findmnt --verify -> test /etc/fstab before reboot
 7. df -h -> see mounted lvs / partitions
+8. mount | grep '/dev/lv1' -> see mounted lvs / partitions
 
 ## Add new partitions and logical volumes, and swap to a system non-destructively
 1. lvcreate
-2. swapon
+2. mkswap /dev/vg1/lv1
+3. swapon /dev/vg1/lv1
+4. swapon -s -> show swap
+5. vi /etc/fstab
+6. /dev/vg1/lv1 swap swap defaults 0 0
 
 ## Create, mount, unmount, and use vfat, ext4, and xfs file systems
 1. mkfs.xfs /dev/vg1/lv1
