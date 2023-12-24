@@ -242,7 +242,7 @@ fi
 ## Deploy, configure, and maintain systems
 
 ### Schedule tasks using at and cron
-1.timedatectl && timedatectl set-timezone
+1. timedatectl && timedatectl set-timezone
 2. yum install at
 3. systemctl start atd && systemctl enable atd
 4. at now + 1min
