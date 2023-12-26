@@ -212,7 +212,7 @@ fi
 4. chown nobody:GROUP /directory/
 5. chmod g+s /directory/
 6. chmod 770 /directory/
-7. usermod -G GROUP user1
+7. usermod -aG GROUP user1
 
 ### Configure disk compression
 1. yum install vdo

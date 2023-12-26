@@ -20,7 +20,7 @@ EX200V8K
 ● Operate running systems
 <!-- ○ Boot, reboot, and shut down a system normally -->
 <!-- ○ Boot systems into different targets manually -->
-○ Interrupt the boot process in order to gain access to a system
+<!-- ○ Interrupt the boot process in order to gain access to a system -->
 <!-- ○ Identify CPU/memory intensive processes and kill processes -->
 <!-- ○ Adjust process scheduling -->
 <!-- ○ Manage tuning profiles -->
