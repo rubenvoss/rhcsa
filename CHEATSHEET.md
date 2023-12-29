@@ -270,35 +270,35 @@ fi
 
 ### Configure time service clients
 1. timedatectl set-timezone Europe/Berlin
-2. timedatectl set-ntp true
-3. chronyc sources -v
-4. vi /etc/chrony.conf
-5. systemctl restart chronyd
+2. timedatectl set-ntp on/off -> enable/disable ntp
+3. yum install chrony && systemctl enable chronyd
+4. chronyc sources -v
+5. vi /etc/chrony.conf
+6. systemctl restart chronyd
+7. hwclock -s, hwclock -w -> sync hardware clock with system clock
 
 ### Install and update software packages from Red Hat Network, a remote repository, or from the local file system
-1. yum search <PACKAGE>
-2. yum list <PACKAGE>
-3. yum install <PACKAGE>
-4. yum update <PACKAGE>
-5. yum localinstall <PACKAGE>
-6. yum remove <PACKAGE>
-7. yum provides <PACKAGE>
-8. yum repolist
-9. yum history
-10. yum history rollback <ID>
-11. yum history undo <ID>
-12. yum history redo <ID>
+1. dnf repolist (--all)
+2. dnf list <PACKAGE>
+3. dnf search <PACKAGE>
+4. dnf update <PACKAGE>
+5. dnf list available python* 
+6. dnf history
+7. dnf history rollback <ID>
 
+8. dnf install dnf-utils
+9. dnf config-manager --enable <REPO>
+10. dnf config-manager --add-repo http://repo.com/repo
+11. /etc/yum.repos.d -> repo configuration files
+12. /etc/yum.conf -> yum conf file
 
-13. yum install dnf-utils
-14. yum config-manager --add-repo http://repo.com/repo
-15. /etc/yum.repos.d -> repo configuration files
-16. /etc/yum.conf -> yum conf file
-17. yum install createrepo
-18. createrepo /path/to/repo
-19. yum config-manager --add-repo file:///path/to/repo
-20. yum repolist
-21. yum disable <REPO>
+13. dnf localinstall <PACKAGE>.rpm
+
+14. yum install createrepo
+15. createrepo /path/to/repo
+16. yum config-manager --add-repo file:///path/to/repo
+17. yum repolist
+18. yum disable <REPO>
 
 
 ### Work with package module streams
